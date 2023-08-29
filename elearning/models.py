@@ -10,14 +10,14 @@ class Student(models.Model):
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(max_length=1500)
     students = models.ManyToManyField(Student, through='Enrollment')
 
 
 class Enrollment(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    score = models.DecimalField(max_digits=5, decimal_places=2)
+    score = models.IntegerField()
     date = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to='submissions/')
 
@@ -30,6 +30,6 @@ class Submission(models.Model):
 
 class Assignment(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(max_length=1500)
     due_date = models.DateTimeField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
