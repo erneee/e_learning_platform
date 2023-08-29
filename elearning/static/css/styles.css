@@ -1,1 +1,159 @@
-/* Your CSS styles here */ 
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+}
+
+.navbar form {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a.split:hover, .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+.navbar a.split {
+  margin-left: 5px;
+  float: right;
+  background-color: #04AA6D;
+  color: white;
+  padding: 20px 16px;
+}
+
+
+
+.centered-input {
+  padding: 6px;
+  border: none;
+  font-size: 17px;
+  width: 500px;
+  border-radius: 20px;
+}
+
+/* Center the form within the navbar */
+.form-group {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+/* Apply styles to the jumbotron */
+.jumbotron {
+	font-family: Arial, Helvetica, sans-serif;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.jumbotron h1 {
+    font-size: 46px;
+}
+
+.jumbotron p {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+/* Apply styles to the featured courses section */
+#courses {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+}
+
+.course {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.course img {
+    max-width: 100%;
+    height: auto;
+}
+
+.course h3 {
+    font-size: 24px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.course p {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.course a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.course a:hover {
+    background-color: #0056b3;
+}

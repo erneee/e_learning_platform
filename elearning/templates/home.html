@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Welcome to E-learning Platform</title>{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="jumbotron text-center" style="background-image: url({% static 'images/header.jpg' %}); background-size: 100%;">
+    <h1>Welcome to eLearning Platform</h1>
+    <p>Learn, Explore, and Excel in your chosen field.</p>
+    <a href="#courses">Browse Courses</a>
+</div>
+
+
+<section id="courses" class="text-center">
+    <h2>Featured Courses</h2>
+    <div class="course">
+        <img src="{% static 'images/python.jpg' %}" alt="Course 1">
+        <h3>Programming Languages</h3>
+        <p>Join millions of learners from around the world learning subjects like Python on eLearning. Learn Python in this complete bootcamp taught by real-world expert instructors.</p>
+        <a href="#">Learn More</a>
+    </div>
+
+    <div class="course">
+        <img src="{% static 'images/webdev.jpg' %}" alt="Course 2">
+        <h3>Development</h3>
+        <p>Learn modern Web Development fundamentals as well as advanced topics. Start today. Develop professional skills that position you at the top of the candidate list.</p>
+        <a href="#">Learn More</a>
+    </div>
+</section>
+{% endblock %}
