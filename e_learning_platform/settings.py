@@ -122,3 +122,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#prijungiam media prie elearning
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'elearning/media')
+MEDIA_URL = '/media/'
+# nukreipimas po prisijungimo
+LOGIN_REDIRECT_URL = '/'
