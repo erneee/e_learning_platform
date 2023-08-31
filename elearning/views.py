@@ -33,3 +33,7 @@ def search(request):
 
     return render(request, 'search.html', context_t)
 
+
+class CourseDetailView(generic.DetailView):
+    model = Course
+    template_name = 'course_detail.html'

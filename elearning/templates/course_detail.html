@@ -1,24 +1,22 @@
-{% extends 'base.html' %}
-
-{% block title %}<title>Welcome to E-learning Platform</title>{% endblock %}
-
+{% extends "base.html" %}
 {% block content %}
 {% load static %}
+
 <div class="jumbotron text-left" style="background-image: url({% static 'images/header.jpg' %}); background-size: 100%;">
   <h1>Welcome to eLearning Platform</h1>
   <p>Learn, Explore, and Excel in your chosen field.</p>
-  <a href="#courses">Browse Courses</a>
+  <a href="{% url 'courses-list-url' %}">Browse Courses</a>
 </div>
 
-
-{% for course in course_list %}
 <section id="courses" class="text-center">
   <h2>{{ course.title }}</h2>
   <div class="course">
     <img src="{% static 'images/python.jpg' %}" alt="Course 1">
     <p>{{ course.description }}</p>
-    <a href="{% url 'course-one' course.id%}">Learn More</a>
+    <p>Course instructor: {{ course.instructor }}</p>
   </div>
 </section>
-{% endfor %}
+
+
 {% endblock %}
+
