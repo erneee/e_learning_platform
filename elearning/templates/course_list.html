@@ -10,15 +10,25 @@
   <a href="#courses">Browse Courses</a>
 </div>
 
-
+<div class="row">
 {% for course in course_list %}
-<section id="courses" class="text-center">
+<div class="col-sm-6 col-md-3 d-flex align-items-stretch">
+  <div class="card mb-4 shadow-sm">
+
   <h2>{{ course.title }}</h2>
-  <div class="course">
-    <img src="{% static 'images/python.jpg' %}" alt="Course 1">
+
+    {% if course.cover %}
+    <img src="{{ course.cover.url }}" class="card-img-top">
     <p>{{ course.description }}</p>
-    <a href="{% url 'course-one' course.id%}">Learn More</a>
+    {% else %}
+    <img src="{% static 'img/no-image.png' %}" class="card-img-top">
+    {% endif %}
+    <div class="card-body">
+      <p class="card-text"><a href="{% url 'course-one' course.id%}">Learn More</a></p>
+    </div>
   </div>
-</section>
+  </div>
+
 {% endfor %}
+</div>
 {% endblock %}
