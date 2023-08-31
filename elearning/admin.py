@@ -1,8 +1,8 @@
 from django.contrib import admin
-from django.contrib import admin
-from .models import Student, Submission, Assignment, Course, Enrollment
+from .models import UserProfile, Submission, Assignment, Course, Enrollment
 # Register your models here.
-admin.site.register(Student)
+
+admin.site.register(UserProfile)
 admin.site.register(Submission)
 admin.site.register(Assignment)
 admin.site.register(Course)

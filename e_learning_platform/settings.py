@@ -128,3 +128,4 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'elearning/media')
 MEDIA_URL = '/media/'
 # nukreipimas po prisijungimo
 LOGIN_REDIRECT_URL = '/'
+

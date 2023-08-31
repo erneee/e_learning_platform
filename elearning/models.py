@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     ROLES = [
@@ -9,19 +10,19 @@ class UserProfile(models.Model):
         ('instructor', 'Instructor'),
     ]
     role = models.CharField(max_length=20, choices=ROLES)
-    f_name = models.CharField(max_length=20)
-    l_name = models.CharField(max_length=20)
     age = models.DateField(null=True, blank=True)
-    email = models.EmailField(max_length=254, unique=True)
+    # Add other fields specific to the UserProfile model if needed
+
 
     def __str__(self):
-        return f"{self.f_name} {self.l_name}, Age: {self.age}"
+        return f"{self.user}, Age: {self.age}"
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=1500)
-    instructor = models.ForeignKey(User, on_delete=models.CASCADE)
-    students = models.ManyToManyField(User, through='Enrollment')
+    description = models.TextField()
+    instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='instructor_courses', null=True)
+    students = models.ManyToManyField(User, through='Enrollment', related_name='enrolled_courses')
+
 
     def __str__(self):
         return self.title
@@ -41,7 +42,7 @@ class Submission(models.Model):
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     assignment = models.ForeignKey('Assignment', on_delete=models.CASCADE)
     submission_date = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(upload_to='submissions/')
+    file = models.FileField(upload_to='submissions/', null=True)
 
     def __str__(self):
         return f"{self.submission_date.strftime('%Y-%m-%d')} Assignment: {self.assignment.title} Student: {self.student.f_name} {self.student.l_name}"

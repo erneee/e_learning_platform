@@ -7,3 +7,31 @@
 body {
 
 }
+
+#courses {
+    background-color: #f4f4f4; /* Set a background color */
+    padding: 20px; /* Add padding to create space around the content */
+    text-align: center; /* Center-align the text */
+}
+
+/* Style the h2 within the section */
+#courses h2 {
+    font-size: 24px; /* Set font size */
+    color: #333; /* Set text color */
+}
+
+/* Style the course divs within the section */
+.course {
+    margin: 20px; /* Add margin to create space between course divs */
+    padding: 20px; /* Add padding to create space within the course divs */
+    background-color: #fff; /* Set a background color for the course divs */
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Style the images within the course divs */
+.course img {
+    max-width: 100%; /* Make images responsive and fit within their containers */
+    height: auto; /* Maintain aspect ratio */
+}
