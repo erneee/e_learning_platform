@@ -21,6 +21,9 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from elearning import views
 
+app_name = 'main'
+
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('learning/', include('elearning.urls')),

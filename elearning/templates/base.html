@@ -45,7 +45,7 @@
         <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">Log out</a></li>
         {% else %}
         <li class="nav-item"><a class="nav-link" href="{% url 'login' %}?next={{request.path}}">Log in</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Sign up</a></li>
         {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'homepage-url' %}">Home</a>

@@ -4,6 +4,7 @@ from datetime import date
 from django.contrib.auth.forms import UserCreationForm
 
 
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     ROLES = [
