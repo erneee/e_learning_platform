@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
+from django.contrib.auth.forms import UserCreationForm
 
 
 class UserProfile(models.Model):
@@ -21,7 +22,7 @@ class Course(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     instructor = models.ForeignKey(User, on_delete=models.CASCADE, related_name='instructor_courses', null=True)
-    students = models.ManyToManyField(User, through='Enrollment', related_name='enrolled_courses')
+    students = models.ManyToManyField(User, through='Enrollment', related_name='enrolled_courses', null=True)
 
 
     def __str__(self):

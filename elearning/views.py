@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Course, UserProfile, Assignment, Submission, Enrollment
 
 def home(request):
@@ -31,3 +32,4 @@ def search(request):
     }
 
     return render(request, 'search.html', context_t)
+

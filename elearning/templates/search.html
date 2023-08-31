@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Search results "{{ query_t }}"</h3>
+
+{% if search_results_t %}
+<ul>
+
+    {% for course in search_results_t %}
+    <li><a href="#">{{ course.title }}</a> Instructor: {{course.instructor}}  </li>
+    {% endfor %}
+
+</ul>
+{% else %}
+<p>Sorry, we could not find what you are looking for...</p>
+
+{% endif %}
+{% endblock %}
